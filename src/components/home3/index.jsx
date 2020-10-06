@@ -8,7 +8,6 @@ import {setTitle, setBody} from "../../redux/actions";
 
 
 class HomeComponent3 extends React.Component {
-
     state = {
         posts: []
     }
@@ -16,25 +15,6 @@ class HomeComponent3 extends React.Component {
     componentDidMount() {
         this.props.fetchPosts()
     }
-
-    // static getDerivedStateFromProps(nextProps) {
-    //     return {
-    //         posts: nextProps.posts || [],
-    //     }
-    // }
-
-    // changeTitle = (event, i) => {
-    //     let value = [...this.state.posts]
-    //     value[i].title = event.target.value
-    //     this.setState({posts: value})
-    // }
-
-    // changeBody = (event, i) => {
-    //     let value = [...this.state.posts]
-    //     value[i].body = event.target.value
-    //     this.setState({posts: value})
-    // }
-
 
     render() {
 
@@ -50,13 +30,13 @@ class HomeComponent3 extends React.Component {
                             <input
                                 type="text"
                                 value={post.title}
-                                onChange={event => this.props.changeTitle(event, i)}/>
+                                onChange={event => this.props.changeTitle(event.target.value, i)}/>
                         </p>
                         <p>
                                 <textarea
                                     rows="6"
                                     value={post.body}
-                                    onChange={event => this.props.changeBody(event, i)}/>
+                                    onChange={event => this.props.changeBody(event.target.value, i)}/>
                         </p>
                     </div>
                 ))
