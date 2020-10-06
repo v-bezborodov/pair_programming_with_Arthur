@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from "redux";
 
 import fetchPosts from '../../redux/fetch/post/fetchPosts'
+
 // import {getPosts} from '../../redux/selectors'
 
 
@@ -16,18 +17,18 @@ class HomeComponent extends React.Component {
     render() {
         return (
             <div className="posts">
-                <>
-                    <h2> All posts (done via classes way):</h2>
-                    {this.props.posts &&
-                    this.props.posts.map((post, i) => (
-                        <div className ="post" key={i}>
-                            <p>post: #{post.id}</p>
-                            <p><b>{post.title}</b></p>
-                            <p><pre>{post.body}</pre></p>
-                        </div>
-                    ))
-                    }
-                </>
+                <h2> All posts (done via classes):</h2>
+                {this.props.posts &&
+                this.props.posts.map((post, i) => (
+                    <div className="post" key={i}>
+                        <p>post: #{post.id}</p>
+                        <p><b>{post.title}</b></p>
+                        <p>
+                            <pre>{post.body}</pre>
+                        </p>
+                    </div>
+                ))
+                }
             </div>
         )
     }

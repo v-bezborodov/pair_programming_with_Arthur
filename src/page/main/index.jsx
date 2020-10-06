@@ -14,7 +14,7 @@ export default class MainPage extends React.Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Link to="/home">Get to the main App</Link>
+          <Link to="/app1">Get to the main App</Link>
         </header>
       </>
     )

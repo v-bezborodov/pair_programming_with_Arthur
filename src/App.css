@@ -44,3 +44,14 @@
     margin: 1em auto;
     padding: 1em;
 }
+
+.post input,
+.post textarea {
+    width: 90%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background: aliceblue;
+}
