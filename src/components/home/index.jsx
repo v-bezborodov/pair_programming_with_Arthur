@@ -1,15 +1,50 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {bindActionCreators} from "redux";
 
-import MainPage from "../../page/main";
+import fetchPosts from '../../redux/fetch/post/fetchPosts'
+// import {getPosts} from '../../redux/selectors'
 
-export default class HomeComponent extends React.Component {
 
-  render() {
-    return (
-      <>
-       Homecomponent123
-      </>
-    )
-  }
+class HomeComponent extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchPosts()
+    }
+
+
+    render() {
+        return (
+            <div className="posts">
+                <>
+                    <h2> All posts (done via classes way):</h2>
+                    {this.props.posts &&
+                    this.props.posts.map((post, i) => (
+                        <div className ="post" key={i}>
+                            <p>post: #{post.id}</p>
+                            <p><b>{post.title}</b></p>
+                            <p><pre>{post.body}</pre></p>
+                        </div>
+                    ))
+                    }
+                </>
+            </div>
+        )
+    }
 }
+
+const mapStateToProps = store => {
+
+    console.log('store', store)
+    return {
+        posts: store.api.posts,
+    }
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchPosts: fetchPosts,
+    // fetchProducts: fetchProductsAction,
+}, dispatch)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent)
