@@ -12,6 +12,7 @@ export default class Menu extends React.Component {
                     <Link to="/app1">App1</Link>
                     <Link to="/app2">App2</Link>
                     <Link to="/app3">App3</Link>
+                    <Link to="/app4">App4</Link>
                 </div>
             </>
         )

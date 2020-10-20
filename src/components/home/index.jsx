@@ -4,8 +4,6 @@ import {bindActionCreators} from "redux";
 
 import fetchPosts from '../../redux/fetch/post/fetchPosts'
 
-// import {getPosts} from '../../redux/selectors'
-
 
 class HomeComponent extends React.Component {
 
@@ -35,8 +33,6 @@ class HomeComponent extends React.Component {
 }
 
 const mapStateToProps = store => {
-
-    console.log('store', store)
     return {
         posts: store.api.posts,
     }

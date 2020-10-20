@@ -8,17 +8,18 @@ import {setTitle, setBody} from "../../redux/actions";
 
 
 class HomeComponent3 extends React.Component {
-    state = {
-        posts: []
-    }
 
     componentDidMount() {
         this.props.fetchPosts()
+        //Arthur reference
+        // let request = fetchPosts();
+        // request.then(posts => {
+        //     this.store.dispatch('set_posts', posts);
+        // })
     }
 
     render() {
 
-        let {posts} = this.state
         return (
             <div className="posts">
                 <h2> All posts (done via classes and controlled inputs but update store):</h2>

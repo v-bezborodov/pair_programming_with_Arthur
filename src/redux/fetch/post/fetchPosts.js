@@ -4,14 +4,13 @@ import axios from 'axios'
 
 const fetchPosts = ()=>{
         return dispatch => {
-          axios('https://jsonplaceholder.typicode.com/posts')
+          axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(response => {
-
-            console.log('response', response.data)
+            console.log('response.data', response.data)
             if(response.data){
-            dispatch(setPosts(response.data))
+            console.log('response.data', response.data)
+                dispatch(setPosts(response.data))
             }
-
             })
             .catch(error => console.log(error))
           }

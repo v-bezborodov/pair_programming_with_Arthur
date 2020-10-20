@@ -6,7 +6,6 @@ import fetchPosts from '../../redux/fetch/post/fetchPosts'
 
 
 class HomeComponent2 extends React.Component {
-
     state = {
         posts: []
     }
@@ -32,7 +31,6 @@ class HomeComponent2 extends React.Component {
         value[i].body = event.target.value
         this.setState({posts: value})
     }
-
 
     render() {
 
